@@ -11,7 +11,7 @@ class Orders(BASE):
 
     __tablename__ = "orders"
 
-    orders_id = Column(Integer, primary_key=True, autoincrement=True)
+    order_id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(30))
     price = Column(Float)
     supplier = Column(String(100))
