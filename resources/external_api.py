@@ -20,7 +20,6 @@ TAG_EXTERNAL_API = Tag(
     tags=[TAG_EXTERNAL_API],
     responses={
         "200": ExternalApiResultSchema,
-        "201": SingleMessageSchema,
         "400": SingleMessageSchema,
     },
 )
@@ -40,10 +39,8 @@ def query_viacep_external_api(query: ExternalApiSchema):
         data = response.json()
 
         if data.get("erro"):
-            raise ValueError("Zip code not found")
+            raise Exception("Zip code not found")
 
         return {"message": "Success", "data": data}, 200
-    except ValueError as value_error:
-        return {"message": f"Warning: {value_error}"}, 201
     except Exception as error:
         return {"message": f"Error: {error}"}, 400
