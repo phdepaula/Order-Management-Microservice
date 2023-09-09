@@ -20,7 +20,7 @@ class Orders(BASE):
     sales_id = Column(Integer)
     quantity = Column(Integer)
     value = Column(Float)
-    sale_date = Column(DateTime)
+    sale_date = Column(String(100))
     zip_code = Column(String(15))
     country = Column(String(50))
     city = Column(String(50))
@@ -39,7 +39,7 @@ class Orders(BASE):
         sales_id: int,
         quantity: int,
         value: float,
-        sale_date: datetime,
+        sale_date: str,
         zip_code: str,
         country: str,
         city: str,
