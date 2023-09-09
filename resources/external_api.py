@@ -16,7 +16,7 @@ TAG_EXTERNAL_API = Tag(
 
 
 @app.get(
-    "/get_viacep",
+    "/get_viacep/",
     tags=[TAG_EXTERNAL_API],
     responses={
         "200": ExternalApiResultSchema,
