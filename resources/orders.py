@@ -11,7 +11,7 @@ from schemas.orders import (
 )
 
 TAG_ORDERS = Tag(
-    name="ORDERS",
+    name="Orders",
     description="Routes for controlling sales orders."
 )
 
