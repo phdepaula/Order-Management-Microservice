@@ -172,7 +172,7 @@ def get_pending_invoices():
 
             content.append(order_data)
 
-        return {"message": " There are pending orders", "orders": content}, 200
+        return {"message": "There are pending orders", "orders": content}, 200
     except Exception as error:
         return {"message": f"Error: {error}"}, 400
 
