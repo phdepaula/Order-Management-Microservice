@@ -27,7 +27,7 @@ TAG_ORDERS = Tag(
 def get_sales_order():
     """Get sales orders that are open via the online store api."""
     try:
-        get_sales_url = "http://127.0.0.1:5000/get_sales"
+        get_sales_url = "http://online-store-microservice:5000/get_sales"
         response_get_sales = requests.get(get_sales_url)
         response_sales_data = response_get_sales.json()
 
@@ -124,7 +124,7 @@ def add_order():
             added_orders.append(formatted_response)
             database.insert_data_table(new_order)
 
-            close_sale_url = "http://127.0.0.1:5000/close_sale"
+            close_sale_url = "http://online-store-microservice:5000/close_sale"
             sales_id = {"sales_id": int(order["sales_id"])}
             response_close_sale = requests.put(close_sale_url, data=sales_id)
             close_sale_data = response_close_sale.json()
