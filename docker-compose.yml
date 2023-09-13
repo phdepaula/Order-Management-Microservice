@@ -10,6 +10,7 @@ services:
       - "5001:5001"
     volumes:
       - ./database/database-file/order-management.sqlite3:/app/database/database-file/order-management.sqlite3
+      - ./log/logs-files:/app/log/logs-files
     environment:
       - API_TITLE=Order Management
       - VERSION=1.0.0
