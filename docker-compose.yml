@@ -3,7 +3,7 @@ services:
   meu-app-order-management:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     container_name: order-management-microservice
     image: order-management:1.0.0
     ports:
